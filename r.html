@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>正常登陆界面</title>
+</head>
+
+<body>
+
+<p><font size="6"><b>这里是关于正常登陆界面的研究</b></font></p>
+<p><font size="6"><b>正常登陆界面如图所示</b></font></p>
+<p><img border="0" src="r.html1.jpg"></p>
+<p><font size="5"><b>正常登陆页面有两个登陆入口</b></font></p>
+<p><font size="5" color="#FF0000"><b>*关于登陆账号的问题本网站极度保密不会公布，假如有需要可以在Github发起提议</b></font></p>
+<p><font size="5"><b>两个入口分别为关于老师登陆与学生登录的入口，代码如下</b></font></p>
+<p><img border="0" src="r.html2.gif"></p>
+<p><font size="5"><b>同时，登陆时发送的请求为Post，请求头Body部分如下</b></font></p>
+<p><img border="0" src="r.html3.gif"></p>
+<p><b><font size="5">这里发送出了日期和用户名，但此时user_name和user_pwd是加密的，我们也不清楚是什么（内容一致，但是目前猜测为MD5）</font></b></p>
+<p><b><font size="5">完整请求头如下</font></b></p>
+<p><img border="0" src="r.html4.gif"></p>
+<p><b><font size="5">但是这里要提到的是，此登录界面和Admin页面也为阴阳界面，分别为</font></b></p>
+<p><a href="http://218.56.181.51/">http://218.56.181.51/</a></p>
+<p><a href="http://218.56.181.51/index.jsp">http://218.56.181.51/index.jsp</a></p>
+<p><a href="http://218.56.181.51/logindao">http://218.56.181.51/logindao</a></p>
+<p><font size="5"><b>其中前两个页面，即端口80和端口80下其他两个界面的最终判定都指向Logindao</b></font></p>
+<p><font size="5"><b>所以假如希望枚举密码可以尝试发送Post命令到Logindao</b></font></p>
+
+</body>
+
+</html>
