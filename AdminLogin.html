@@ -1,0 +1,36 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Admin页面</title>
+</head>
+
+<body>
+
+<p><b><font size="5">这里是关于Admin页面的解释</font></b></p>
+<p>页面链接:<a href="http://218.56.181.51/adminlogin.jsp">http://218.56.181.51/adminlogin.jsp</a></p>
+<p><img border="0" src="AdminL1.jpg"></p>
+<p><b><font size="5">这里是关于学校阅卷系统的管理员登录界面的解释，这个页面存在于上方的链接</font></b></p>
+<p><font size="5"><b>目前的发现为:账户之一为“admin”而密码不清楚</b></font></p>
+<p><font size="5"><b>登录后可以对于学校的信息和各大权限组进行管理</b></font></p>
+<p><font size="5"><b>登录请求研究：</b></font></p>
+<p><font size="5"><b>登录时发送一个HTTP:Post的请求，请求头如下</b></font></p>
+<p><img border="0" src="AdminL2.jpg"></p>
+<p><font size="5"><b>同时，其实登录界面有两个阴阳界面</b></font></p>
+<p><font size="5"><b>一个是</b></font><a href="http://218.56.181.51/adminlogindao">http://218.56.181.51/adminlogindao</a></p>
+<p><b><font size="5">另外一个则是</font></b><a href="http://218.56.181.51/adminlogin.jsp">http://218.56.181.51/adminlogin.jsp</a></p>
+<p><font size="5"><b>这里的发现是假如是进入第二网址，那么会在开始有一个alert的弹窗</b></font></p>
+<p><font size="5"><b>请求头的最终发送方向也是到第二个网址</b></font></p>
+<p>　</p>
+<p><img border="0" src="AdminL3.jpg"></p>
+<p><font size="5"><b>最后发现，admin.jsp和adminlogindao都是登录界面</b></font></p>
+<p><font size="5"><b>但是admin.jsp登录错误之后不会自身alert自己的不正确弹窗</b></font></p>
+<p><font size="5"><b>而是跳转到adminlogindao，开始就会刷新弹窗，假如错误就会刷新界面</b></font></p>
+<p><font size="5"><b>而假如是正确的密码，那么就会直接跳转进入后台，而不会显示</b></font></p>
+<p><font size="5" color="#FF0000"><b>Hack思路提供:可以使用Node.js双工流Net库进行Post请求发送</b></font></p>
+<p>　</p>
+
+</body>
+
+</html>
